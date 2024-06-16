@@ -31,7 +31,7 @@
 {% endblock %}
 {% block content %}
 
-<div class="card">
+<div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{{ book.path.url }}" alt="{{ book.title }}">
     <div class="card-body">
         <h5 class="card-title">{{ clothing.title }}</h5>
@@ -40,9 +40,9 @@
             
             {% if user.is_authenticated %}
                 {% if liked %}
-                    <img src="{% static 'assets/img/like.svg' %}" height="30px" width="30px" alt="descurtir" srcset="" style="background-color: red;">
+                    <img src="{% static 'assets/img/like2.png' %}" height="30px" width="30px" alt="descurtir" srcset="" style="background-color: red;">
                 {% else %}
-                    <img src="{% static 'assets/img/like.svg' %}" height="30px" width="30px" alt="curtir" srcset="" >
+                    <img src="{% static 'assets/img/like.png' %}" height="30px" width="30px" alt="curtir" srcset="">
                 {% endif %}
             {% else %}
                 Curtir

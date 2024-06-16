@@ -2,17 +2,16 @@
 {% for book in books %}
 
     <div class="col-md-4">
-        <a href="{% url 'detail_book' book.id %}">
-        <div class="card mb-4">
-            <img class="card-img-top" src="{{ book.path.url }}" alt="{{ book.title }}">
-            <div class="card-body">
-                <details>
-                    <summary><h5 class="card-title">{{ book.title }}</h5></summary>
-                    <p class="card-text">{{ book.description }}</p>               
-                </details>
+        <a style="text-decoration: none;" href="{% url 'detail_book' book.id %}">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ book.path.url }}" class="card-img-top" alt="{{ book.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <details>
+                        <p class="card-text">{{ book.description }}</p>               
+                    </details>
+                </div>
             </div>
-        </div>
-    </a>
+        </a>
     </div>
-
 {% endfor %}

@@ -1,7 +1,10 @@
-function alteraimg(){
-    var div = document.getElementById('like').src;
-    var id = document.getElementById('like').id;
-    
-    div.innerHTML = "<img src='/static/assets/img/like2.png' width='40px' height='40px'>";
+const details = document.querySelector('details');
+const cardText = document.querySelector('.card-text');
 
-}
+details.addEventListener('toggle', () => {
+  if (details.open) {
+    cardText.style.display = 'none';
+  } else {
+    cardText.style.display = 'block';
+  }
+});
