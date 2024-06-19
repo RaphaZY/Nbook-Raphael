@@ -1,0 +1,20 @@
+[
+    {
+        "model": "users_user",
+        "pk": 1,
+        "fields":{
+            "username": "Raphael",
+            "password": "pbkdf2_sha256$720000$zEawpgIRFYEkBUsFULokoN$mplBNzl2pN2H+pA3vrDkCrJOVRsl5uj/6hgVt1Rtrcs=",
+            "email": "rapha@gmail.com"
+        }
+    },
+    {
+        "model": "catalog_book",
+        "pk": 1,
+        "fields":{
+            "title": "rtr",
+            "path": "img/2024/06/18/transferir.png",
+            "description": "ert"
+        }
+    }
+]

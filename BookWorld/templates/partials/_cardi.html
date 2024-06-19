@@ -2,11 +2,11 @@
 {% for book in books %}
 
     <div class="col-md-4">
-        <a style="text-decoration: none;" href="{% url 'detail_book' book.id %}" data-bs-toggle="modal" data-bs-target="#CardModal">
-            <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;">
+            <a style="text-decoration: none;" href="{% url 'detail_book' book.id %}">
                 <img src="{{ book.path.url }}" class="card-img-top" alt="{{ book.title }}">
-                <div class="card-body">
-                  
+            </a>
+            <div class="card-body">
                 <div class="d-flex" style="justify-content: space-around">
                     <div id="btlike" onclick="liked()">
                         <svg id="like" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="#fff" stroke="#000" class="bi bi-heart-fill" viewBox="-1 -1 18 16" >
@@ -19,9 +19,7 @@
                         </svg>
                     </div>
                 </div>
-                    
-                </div>
             </div>
-        </a>
+        </div>
     </div>
 {% endfor %}
