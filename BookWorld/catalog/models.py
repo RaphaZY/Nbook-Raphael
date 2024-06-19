@@ -6,6 +6,13 @@ class Book(models.Model):
     path = models.ImageField(upload_to="img/%Y/%m/%d/", blank=True)
     description = models.TextField()
 
+    def total_likes(self):
+        return Like.objects.filter(book=self).count()
+
+    def user_liked(self, user):
+        return Like.objects.filter(book=self, user=user).exists()
+
+
     def __str__(self):
         return self.title
 

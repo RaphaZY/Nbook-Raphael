@@ -10,6 +10,15 @@
         <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
         <script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
         <script src="{% static 'assets/js/scripts.js' %}"></script>
+        
+        
+        <script>
+            var svg = document.getElementById('btlike').querySelector("svg");
+            svg.addEventListener('click', liked);
+        </script>
+        
+     
+        
         <style>
             header{
            
@@ -69,6 +78,22 @@
             margin-right: 0;
             }
            
+            .like-button {
+                fill: white;
+                stroke: #000;
+            }
+        
+            .liked {
+                background-image: url(fill-heart.svg);
+                background-color: red;
+                fill: red;
+                stroke: red;
+            }
+        
+            .like-button i {
+                margin-right: 8px;
+            }
+
 
             @media screen and (max-width: 450px){
             .fs-5{

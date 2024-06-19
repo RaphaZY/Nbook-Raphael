@@ -27,6 +27,24 @@
 </style>
 {% endblock %}
 {% block script %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const likeButton = document.getElementById('likeButton');
+        likeButton.addEventListener('click', function() {
+            this.classList.toggle('liked');
+            const icon = this.querySelector('i');
+            if (this.classList.contains('liked')) {
+                this.textContent = ' Descurtir';
+                this.prepend(icon);
+                icon.className = 'fa fa-thumbs-down';
+            } else {
+                this.textContent = ' Curtir';
+                this.prepend(icon);
+                icon.className = 'fa fa-thumbs-up';
+            }
+        });
+    });
+</script>
 
 {% endblock %}
 {% block content %}
@@ -37,7 +55,7 @@
         <h5 class="card-title">{{ clothing.title }}</h5>
         <p class="card-text">{{ clothing.description }}</p>
         <a href="{% url 'like_book' book.id %}" id="likeButton" class="like-button {% if liked %}liked{% endif %}">
-            
+            <i class="fa {% if liked %}fa-thumbs-down{% else %}fa-thumbs-up{% endif %}"></i>
             {% if user.is_authenticated %}
                 {% if liked %}
                     <img src="{% static 'assets/img/like2.png' %}" height="30px" width="30px" alt="descurtir" srcset="" style="background-color: red;">

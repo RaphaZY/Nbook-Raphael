@@ -1,10 +1,13 @@
-const details = document.querySelector('details');
-const cardText = document.querySelector('.card-text');
-
-details.addEventListener('toggle', () => {
-  if (details.open) {
-    cardText.style.display = 'none';
-  } else {
-    cardText.style.display = 'block';
-  }
-});
+var like = 0;
+function liked(){
+    var svg = document.getElementById('btlike').querySelector("svg");
+    if(like == 0){
+        svg.style.fill = "red";
+        svg.style.stroke = "red";
+        like = 1;
+    } else {
+        svg.style.fill = "white";
+        svg.style.stroke = "red";
+        like = 0;
+    }
+}
